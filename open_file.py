@@ -136,6 +136,7 @@ class OpenWriteCommand(sublime_plugin.WindowCommand):
         if head != '':
             currentDir = head
 
+        # Environment variable parsing is limited.
         if '$' in tail:
             [beforeEnvironmentVar, environmentVar] = tail.split('$', 1)
             value = os.environ.get(environmentVar)
